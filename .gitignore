@@ -1,0 +1,31 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# env files
+.env*
+
+# vercel
+.vercel
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+
+# throwaway design prototypes (never committed)
+_prototypes/
+
+# local agent files and tool output
+AGENTS.md
+CLAUDE.md
+.playwright-mcp/
+node_modules

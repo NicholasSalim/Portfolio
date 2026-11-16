@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* Dark is the default; [data-theme="light"] is set by the toggle. */
+:root,
+:root[data-theme="dark"] {
+  --bg: #1a1511;
+  --panel: #231c17;
+  --line: #3a2f27;
+  --fg: #f2eadf;
+  --muted: #a8998a;
+  --mint: #7edcc0;
+  --mint-ink: #10241d;
+  --lit: #24312b;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f3eee6;
+  --panel: #fbf8f3;
+  --line: #ddd2c4;
+  --fg: #221b15;
+  --muted: #6b5d50;
+  --mint: #1b7f65;
+  --mint-ink: #ffffff;
+  --lit: #dcefe7;
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-mint: var(--mint);
+  --color-mint-ink: var(--mint-ink);
+  --color-lit: var(--lit);
+  --font-sans: var(--font-plex);
+  --font-display: var(--font-fraunces);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-plex), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--mint);
+  color: var(--mint-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--mint);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
