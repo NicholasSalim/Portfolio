@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: PageProps<"/work/[slug]">): P
   const project = getProject((await params).slug);
   if (!project) return {};
   return {
-    title: `${project.name}, ${project.kind}`,
+    title: { absolute: `${project.name} | ${project.kind}` },
     description: project.blurb,
     alternates: { canonical: `/work/${project.slug}` },
     openGraph: { images: [{ url: project.screenshot, width: 1440, height: 900 }] },
@@ -29,7 +29,7 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
   return (
     <article className="mx-auto max-w-6xl px-4 pt-6 pb-24 sm:px-8">
       <Link href="/#work" className="text-[15px] text-muted hover:text-fg">
-        Back to work
+        <span aria-hidden="true">←</span> Back
       </Link>
 
       <header className="mt-10 grid gap-8 md:grid-cols-[1.3fr_1fr] md:items-end">

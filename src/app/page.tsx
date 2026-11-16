@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="work" className="scroll-mt-8 pt-28 pb-10">
+      <section id="work" className="scroll-mt-24 pt-28 pb-10">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
             <h2 className={sectionHeading}>What came out</h2>
@@ -61,7 +61,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how-i-ship" className="scroll-mt-8 py-24">
+      <section id="how-i-ship" className="scroll-mt-24 py-24">
         <h2 className={sectionHeading}>How I ship</h2>
         <p className="mt-3 max-w-[38em] text-muted">
           The agents write the code. I decide what gets built, define what &quot;working&quot; means, and make sure
@@ -98,7 +98,7 @@ export default function Home() {
         </dl>
       </section>
 
-      <section id="about" className="grid scroll-mt-8 gap-12 py-24 md:grid-cols-2">
+      <section id="about" className="grid scroll-mt-24 gap-12 py-24 md:grid-cols-2">
         <div>
           <h2 className={sectionHeading}>About</h2>
           <p className="mt-6 max-w-[34em] text-lg leading-relaxed text-muted">
@@ -108,7 +108,7 @@ export default function Home() {
             way.
           </p>
         </div>
-        <div id="contact" className="scroll-mt-8">
+        <div id="contact" className="scroll-mt-24">
           <h2 className={sectionHeading}>Get in touch</h2>
           <ul className="mt-6 divide-y divide-line border-y border-line">
             {contact.map((c) => (

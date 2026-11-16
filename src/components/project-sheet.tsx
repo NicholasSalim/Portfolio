@@ -7,7 +7,7 @@ import type { Project } from "@/content/projects";
 export function ProjectSheet({ project, index, priority }: { project: Project; index: number; priority?: boolean }) {
   return (
     <article
-      style={{ top: `${40 + index * 24}px` }}
+      style={{ top: `${88 + index * 24}px` }}
       className="sticky mb-10 grid gap-8 rounded-[22px] border border-line bg-panel p-6 shadow-[0_-20px_60px_-24px_rgb(0_0_0/0.45)] sm:p-7 md:min-h-[460px] md:grid-cols-[1fr_1.45fr]"
     >
       <div className="flex flex-col">

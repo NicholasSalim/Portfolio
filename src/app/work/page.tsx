@@ -4,7 +4,7 @@ import Link from "next/link";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Works",
   description: "Every project, from idea to production.",
   alternates: { canonical: "/work" },
 };

@@ -13,6 +13,7 @@
   --mint: #7edcc0;
   --mint-ink: #10241d;
   --lit: #24312b;
+  --glow: rgb(126 220 192 / 0.1);
   color-scheme: dark;
 }
 
@@ -25,6 +26,7 @@
   --mint: #1b7f65;
   --mint-ink: #ffffff;
   --lit: #dcefe7;
+  --glow: rgb(27 127 101 / 0.09);
   color-scheme: light;
 }
 

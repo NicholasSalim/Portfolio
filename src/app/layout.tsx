@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Fraunces, IBM_Plex_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { BackToTop } from "@/components/back-to-top";
+import { CursorGlow } from "@/components/cursor-glow";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/content/site";
@@ -21,7 +23,7 @@ const plex = IBM_Plex_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name}, ${site.role}`,
+    default: `${site.name} | Portfolio`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -53,6 +55,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <SiteFooter />
+        <BackToTop />
+        <CursorGlow />
         <Analytics />
       </body>
     </html>

@@ -9,7 +9,7 @@ export const site = {
   description:
     "Nicholas Salim takes web apps from idea to production with coding agents: specs, tests, CI and deploys included.",
   github: "https://github.com/NicholasSalim",
-  email: null as string | null,
+  email: "nicholassalim05@gmail.com" as string | null,
   linkedin: null as string | null,
   resume: null as string | null,
   source: null as string | null,
