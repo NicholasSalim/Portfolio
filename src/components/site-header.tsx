@@ -13,11 +13,14 @@ export function SiteHeader() {
           <Link href="/#work" className="hidden hover:text-fg sm:inline">
             Work
           </Link>
-          <Link href="/#how-i-ship" className="hidden hover:text-fg sm:inline">
-            How I ship
+          <Link href="/#stack" className="hidden hover:text-fg sm:inline">
+            Stack
           </Link>
           <Link href="/#about" className="hidden hover:text-fg sm:inline">
             About
+          </Link>
+          <Link href="/#contact" className="hidden hover:text-fg sm:inline">
+            Contact
           </Link>
           {site.resume && (
             <a href={site.resume} download className="hover:text-fg">

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Project } from "@/content/projects";
 
 // One sheet of the stacked deck on the home page. Sheets are sticky with a
@@ -22,12 +21,14 @@ export function ProjectSheet({ project, index, priority }: { project: Project; i
           ))}
         </ul>
         <div className="mt-auto flex flex-wrap gap-3 pt-8">
-          <Link
-            href={`/work/${project.slug}`}
+          <a
+            href={project.repo}
+            target="_blank"
+            rel="noreferrer"
             className="rounded-[10px] bg-mint px-4.5 py-2.75 text-[15px] font-medium text-mint-ink transition-opacity hover:opacity-90"
           >
-            How it&apos;s built
-          </Link>
+            View on GitHub
+          </a>
           <a
             href={project.url}
             target="_blank"
@@ -38,8 +39,10 @@ export function ProjectSheet({ project, index, priority }: { project: Project; i
           </a>
         </div>
       </div>
-      <Link
-        href={`/work/${project.slug}`}
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noreferrer"
         tabIndex={-1}
         aria-hidden="true"
         className="group relative block min-h-[220px] overflow-hidden rounded-[14px] border border-line"
@@ -52,7 +55,7 @@ export function ProjectSheet({ project, index, priority }: { project: Project; i
           sizes="(min-width: 768px) 640px, 100vw"
           className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         />
-      </Link>
+      </a>
     </article>
   );
 }
