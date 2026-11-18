@@ -6,6 +6,7 @@ import { CursorGlow } from "@/components/cursor-glow";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/content/site";
+import { DEFAULT_THEME, THEME_ATTRIBUTE, themeScript } from "@/lib/theme";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -34,12 +35,14 @@ export const metadata: Metadata = {
   },
 };
 
-// Runs before paint so a visitor who chose light mode never sees a dark flash.
-const themeScript = `try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}`;
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" data-theme="dark" className={`${fraunces.variable} ${plex.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      {...{ [THEME_ATTRIBUTE]: DEFAULT_THEME }}
+      className={`${fraunces.variable} ${plex.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

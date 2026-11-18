@@ -1,28 +1,30 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
-
-type Theme = "dark" | "light";
+import { DEFAULT_THEME, THEME_ATTRIBUTE, THEME_KEY, THEMES, isTheme, type Theme } from "@/lib/theme";
 
 function subscribe(onChange: () => void) {
   const observer = new MutationObserver(onChange);
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: [THEME_ATTRIBUTE] });
   return () => observer.disconnect();
 }
 
-const read = (): Theme => (document.documentElement.dataset.theme === "light" ? "light" : "dark");
+function read(): Theme {
+  const value = document.documentElement.getAttribute(THEME_ATTRIBUTE);
+  return isTheme(value) ? value : DEFAULT_THEME;
+}
 
 export function ThemeToggle() {
-  const theme = useSyncExternalStore(subscribe, read, () => "dark" as Theme);
-  const next: Theme = theme === "dark" ? "light" : "dark";
+  const theme = useSyncExternalStore(subscribe, read, () => DEFAULT_THEME);
+  const next = THEMES.find((t) => t !== theme) ?? DEFAULT_THEME;
 
   return (
     <button
       type="button"
       onClick={() => {
-        document.documentElement.dataset.theme = next;
+        document.documentElement.setAttribute(THEME_ATTRIBUTE, next);
         try {
-          localStorage.setItem("theme", next);
+          localStorage.setItem(THEME_KEY, next);
         } catch {}
       }}
       aria-label={`Switch to ${next} mode`}

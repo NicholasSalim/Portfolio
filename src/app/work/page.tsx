@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { ProjectLinks, ProjectTags } from "@/components/project-meta";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
@@ -29,21 +30,8 @@ export default function WorkIndex() {
               <p className="text-sm text-mint">{p.kind}</p>
               <h2 className="mt-1 font-display text-2xl">{p.name}</h2>
               <p className="mt-2 text-[15px] leading-relaxed text-muted">{p.blurb}</p>
-              <ul className="mt-4 flex flex-wrap gap-2" aria-label="Built with">
-                {p.tags.map((t) => (
-                  <li key={t} className="rounded-lg bg-bg px-2.5 py-1 text-[12px] text-muted">
-                    {t}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-auto flex gap-4 pt-5 text-[15px]">
-                <a href={p.repo} target="_blank" rel="noreferrer" className="text-mint hover:underline">
-                  View on GitHub
-                </a>
-                <a href={p.url} target="_blank" rel="noreferrer" className="text-muted hover:text-fg">
-                  Live site
-                </a>
-              </div>
+              <ProjectTags project={p} size="compact" />
+              <ProjectLinks project={p} size="compact" />
             </div>
           </li>
         ))}

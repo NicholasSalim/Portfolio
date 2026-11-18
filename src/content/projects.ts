@@ -13,7 +13,7 @@ export type Project = {
   screenshot: string;
 };
 
-export const FEATURED_COUNT = 3;
+const FEATURED_COUNT = 3;
 
 export const projects: Project[] = [
   {
@@ -51,6 +51,4 @@ export const projects: Project[] = [
   },
 ];
 
-export function featuredProjects(list: Project[] = projects): Project[] {
-  return list.slice(0, FEATURED_COUNT);
-}
+export const featuredProjects = projects.slice(0, FEATURED_COUNT);

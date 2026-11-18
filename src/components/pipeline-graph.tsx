@@ -50,13 +50,13 @@ export function PipelineGraph() {
         const on = i < lit;
         const last = i === pipeline.length - 1;
         return (
-          <li key={step.name} className="relative flex items-center md:justify-center">
+          <li key={step} className="relative flex items-center md:justify-center">
             <span
               className={`relative z-10 rounded-xl border px-4 py-2.5 text-sm font-medium transition-colors duration-300 md:w-[82%] md:text-center ${
                 on ? "border-mint bg-lit text-fg" : "border-line bg-panel text-muted"
               } ${last && on ? "shadow-[0_0_24px_-4px_var(--mint)]" : ""}`}
             >
-              {step.name}
+              {step}
             </span>
             {!last && (
               <span aria-hidden="true" className="absolute top-1/2 left-[91%] hidden h-px w-[18%] bg-line md:block">

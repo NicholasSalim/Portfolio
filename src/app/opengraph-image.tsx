@@ -29,7 +29,7 @@ export default function Image() {
         <div style={{ display: "flex", gap: 12 }}>
           {pipeline.map((s, i) => (
             <div
-              key={s.name}
+              key={s}
               style={{
                 display: "flex",
                 padding: "10px 18px",
@@ -40,7 +40,7 @@ export default function Image() {
                 color: i === pipeline.length - 1 ? "#f2eadf" : "#a8998a",
               }}
             >
-              {s.name}
+              {s}
             </div>
           ))}
         </div>

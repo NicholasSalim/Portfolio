@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Project } from "@/content/projects";
+import { ProjectLinks, ProjectTags } from "./project-meta";
 
 // One sheet of the stacked deck on the home page. Sheets are sticky with a
 // slightly larger offset each, so they pile up as you scroll.
@@ -13,31 +14,8 @@ export function ProjectSheet({ project, index, priority }: { project: Project; i
         <p className="text-[15px] text-mint">{project.kind}</p>
         <h3 className="mt-2 font-display text-4xl font-medium tracking-tight sm:text-[44px]">{project.name}</h3>
         <p className="mt-4 leading-relaxed text-muted">{project.blurb}</p>
-        <ul className="mt-6 flex flex-wrap gap-2" aria-label="Built with">
-          {project.tags.map((t) => (
-            <li key={t} className="rounded-lg bg-bg px-3 py-1.5 text-[13px] text-muted">
-              {t}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-auto flex flex-wrap gap-3 pt-8">
-          <a
-            href={project.repo}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-[10px] bg-mint px-4.5 py-2.75 text-[15px] font-medium text-mint-ink transition-opacity hover:opacity-90"
-          >
-            View on GitHub
-          </a>
-          <a
-            href={project.url}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-[10px] border border-line px-4.5 py-2.75 text-[15px] transition-colors hover:border-mint"
-          >
-            Live site
-          </a>
-        </div>
+        <ProjectTags project={project} size="large" />
+        <ProjectLinks project={project} size="large" />
       </div>
       <a
         href={project.url}

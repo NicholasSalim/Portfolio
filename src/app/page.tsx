@@ -16,8 +16,6 @@ const skills: { group: string; items: string[] }[] = [
 const sectionHeading = "font-display text-[clamp(34px,4vw,56px)] font-light tracking-tight";
 
 export default function Home() {
-  const featured = featuredProjects();
-
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-8">
       <section className="pt-14 pb-10 text-center sm:pt-20">
@@ -40,7 +38,7 @@ export default function Home() {
         <h2 className={sectionHeading}>What came out</h2>
         <p className="mt-3 text-muted">Each one is live, with its source on GitHub.</p>
         <div className="mt-12">
-          {featured.map((p, i) => (
+          {featuredProjects.map((p, i) => (
             <ProjectSheet key={p.slug} project={p} index={i} priority={i === 0} />
           ))}
         </div>
