@@ -79,9 +79,9 @@ export default function Home() {
             Full-stack, from the database to the deploy.
           </p>
           <p className="mt-5 max-w-[34em] text-lg leading-relaxed text-muted">
-            I&apos;m a full-stack developer building web apps: the interface, the API, the data model, authentication
-            and app security. I work with coding agents, skills and MCP, helping me ship faster while specs, tests and
-            CI keep every release reliable.
+            I build and ship web applications, from interface and API design to data modeling, authentication
+            and application security. My workflow pairs agents, custom skills and MCP with specs, automated
+            tests and CI, so I can move quickly without compromising quality.
           </p>
         </div>
         <div id="contact" className="scroll-mt-24">
